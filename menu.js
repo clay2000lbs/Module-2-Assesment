@@ -32,7 +32,18 @@
 
 //CODE HERE
 
+class Pizza {
+    constructor(name, price, category, popularity, rating, tags) {
+        this.name = name;
+        this.price = price;
+        this.category = category;
+        this.popularity = popularity;
+        this.rating = rating;
+        this.tags = tags;
+    }
+}
 
+const pepperoni = new Pizza("pepperoni", 15, "entree", 1, 10, ["non-vegetarian", "non-vegan", "large"])
 
 //////////////////PROBLEM 2////////////////////
 /* 
@@ -44,6 +55,7 @@
 
 //CODE HERE
 
+console.log(pepperoni.popularity)
 
 /*
     Second, log the second tag in your pizza's
@@ -54,6 +66,7 @@
 
 //CODE HERE
 
+console.log(pepperoni.tags[1])
 
 /*
     Third, destructure the price off of the
@@ -64,6 +77,9 @@
 
 //CODE HERE
 
+let {price} = pepperoni
+
+console.log(price)
 
 /*
     Fourth, and last, destructure the category
@@ -73,6 +89,10 @@
 */
 
 //CODE HERE
+
+let {category} = pepperoni
+
+console.log(category)
 
 
 //////////////////PROBLEM 3////////////////////
@@ -89,7 +109,48 @@
 
 //CODE HERE
 
-
+const foodArr = [
+    salad = {
+        name : "Ceasar",
+        price: 5,
+        category: "appetizer",
+        popularity: 2,
+        rating: 6,
+        tags: ["healthy", "vegetarian", "small"]
+    },
+    meatball = {
+        name : "Momma's Special",
+        price: 7,
+        category: "appetizer",
+        popularity: 1,
+        rating: 9,
+        tags: ["non-vegetarian", "non-vegan", "medium"]
+    },
+    pasta = {
+        name : "Chicken Alfredo",
+        price: 10,
+        category: "entree",
+        popularity: 3,
+        rating: 6,
+        tags: ["non-vegetarian", "non-vegan", "medium"]
+    },
+    donuts = {
+        name : "Glazed Donuts",
+        price: 4,
+        category: "dessert",
+        popularity: 4,
+        rating: 5,
+        tags: ["vegetarian", "non-vegan", "small"]
+    },
+    icecream = {
+        name : "Napoleon",
+        price: 5,
+        category: "dessert",
+        popularity: 5,
+        rating: 3,
+        tags: ["vegetarian", "small"]
+    }
+]
 
 //////////////////PROBLEM 4////////////////////
 /* 
@@ -105,7 +166,16 @@
 
 //CODE HERE
 
-// const filteredFood = foodArr.filter(/* CALLBACK HERE */)
+const sortByTag = (tag) => {
+    foodArr.forEach (food => {
+        if (food.tags.includes(tag)) {
+            return food.name
+        }
+    })
+}
+//const filteredFood = foodArr.filter(sortByTag("small"))
+
+
 
 
 

@@ -35,7 +35,9 @@ const cart = [
 
 //CODE HERE
 
-// const summedPrice = cart.reduce(/* CALLBACK HERE */)
+
+
+ const summedPrice = cart.reduce()
 
 
 //////////////////PROBLEM 2////////////////////
@@ -55,7 +57,10 @@ const cart = [
 
 //CODE HERE
 
-
+const calcFinalPrice = (cartTotal, couponValue, tax) => {
+    cartTotal = ((cartTotal * tax) + cartTotal) - couponValue
+    return Math.round(cartTotal)
+}
 
 //////////////////PROBLEM 3////////////////////
 /*  
@@ -79,6 +84,10 @@ const cart = [
 
 /*
     TEXT ANSWER HERE
+    name property is a string and  is used to pair the order with the customer
+    phone number is a number and is used to contact the custoner
+    address is a string and is used to deliver to the customer
+    has coupon is a boolean to verify that that can get a discount
 
 */
 
@@ -88,3 +97,10 @@ const cart = [
 */
 
 //CODE HERE
+
+const customer = {
+    name: "Clayton Wilkerson",
+    phone: 3375343467,
+    address: "154 mimosa place",
+    hasCoupon: true
+}
